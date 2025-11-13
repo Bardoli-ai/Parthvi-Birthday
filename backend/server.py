@@ -52,6 +52,11 @@ class StatusCheckCreate(BaseModel):
 async def root():
     return {"message": "Hello World"}
 
+@api_router.get("/audio-config")
+async def get_audio_config():
+    """Returns the audio configuration including MP3 URL"""
+    return AUDIO_CONFIG
+
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
     status_dict = input.model_dump()

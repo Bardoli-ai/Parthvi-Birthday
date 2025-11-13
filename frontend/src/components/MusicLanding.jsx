@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, Heart, Music2, Volume2 } from 'lucide-react';
+import { Play, Pause, Heart, Music2, Volume2, Gift, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import './MusicLanding.css';
 
@@ -10,6 +10,7 @@ const MusicLanding = () => {
   const [showLyrics, setShowLyrics] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [heartClicked, setHeartClicked] = useState(false);
+  const [showGift, setShowGift] = useState(true);
   const audioRef = useRef(null);
 
   const audioUrl = 'https://customer-assets.emergentagent.com/job_songcraft-for-you/artifacts/8rton931_We%E2%80%99ve%20seen%20each%20other%20break%2C%20we%E2%80%99ve%20seen%20%20%282%29.mp3';
@@ -98,6 +99,9 @@ Stay you — the world feels right.`;
       audio.pause();
     } else {
       audio.play();
+      if (showGift) {
+        setTimeout(() => setShowGift(false), 1000);
+      }
     }
     setIsPlaying(!isPlaying);
   };
@@ -126,19 +130,42 @@ Stay you — the world feels right.`;
     <div className="music-landing">
       <audio ref={audioRef} src={audioUrl} preload="metadata" />
       
-      {/* Floating music elements */}
+      {/* Confetti elements */}
+      <div className="confetti-container">
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className={`confetti confetti-${i % 5}`} style={{
+            left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 3}s`,
+            animationDuration: `${3 + Math.random() * 2}s`
+          }} />
+        ))}
+      </div>
+
+      {/* Floating music and gift elements */}
       <div className="floating-elements">
         <Music2 className="float-element" style={{ top: '10%', left: '10%' }} />
-        <Music2 className="float-element" style={{ top: '20%', right: '15%' }} />
-        <Music2 className="float-element" style={{ bottom: '15%', left: '20%' }} />
-        <Music2 className="float-element" style={{ bottom: '25%', right: '10%' }} />
+        <Gift className="float-element" style={{ top: '15%', right: '12%' }} />
+        <Sparkles className="float-element" style={{ bottom: '15%', left: '15%' }} />
+        <Music2 className="float-element" style={{ bottom: '20%', right: '10%' }} />
       </div>
 
       <div className="content-wrapper">
-        {/* Top Section - Cover Art */}
+        {/* Birthday Header */}
+        <div className="birthday-header">
+          <Gift className="gift-icon-header" />
+          <h2 className="birthday-greeting">Happy Birthday Parthvi!</h2>
+        </div>
+
+        {/* Top Section - Cover Art with Gift */}
         <div className="cover-section">
           <div className="cover-art-wrapper">
-            <div className={`cover-art ${isPlaying ? 'playing' : ''}`}>
+            {showGift && (
+              <div className="gift-overlay">
+                <Gift size={120} className="gift-box-icon" />
+                <p className="gift-text">Tap play to unwrap your gift</p>
+              </div>
+            )}
+            <div className={`cover-art ${isPlaying ? 'playing' : ''} ${!showGift ? 'revealed' : ''}`}>
               <div className="cover-placeholder">
                 <Music2 size={80} className="cover-icon" />
                 <div className="sound-waves">
@@ -150,8 +177,8 @@ Stay you — the world feels right.`;
               </div>
             </div>
           </div>
-          <h1 className="song-title">For Parthvi</h1>
-          <p className="song-subtitle">Written & Composed by Jainish Chaudhari</p>
+          <h1 className="song-title">A Song Just For You</h1>
+          <p className="song-subtitle">Gifted By: Jainish Chaudhari and Dhruv Patel</p>
         </div>
 
         {/* Middle Section - Music Player */}
@@ -211,13 +238,13 @@ Stay you — the world feels right.`;
             <Heart className="heart-icon" fill={heartClicked ? 'currentColor' : 'none'} />
           </button>
           {heartClicked && (
-            <p className="heart-message">You're my favorite part of this song</p>
+            <p className="heart-message">You're our favorite person</p>
           )}
         </div>
 
         {/* Footer Signature */}
         <div className="signature">
-          <p>– Jainish</p>
+          <p>With love, Jainish & Dhruv</p>
         </div>
       </div>
     </div>

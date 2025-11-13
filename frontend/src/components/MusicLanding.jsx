@@ -211,8 +211,8 @@ Stay you — the world feels right.`;
               </div>
             </div>
           </div>
-          <h1 className="song-title">A Song Just For You</h1>
-          <p className="song-subtitle">Gifted By: Jainish Chaudhari and Dhruv Patel</p>
+          <h1 className="song-title">{songTitle}</h1>
+          <p className="song-subtitle">Gifted By: {giftedBy}</p>
         </div>
 
         {/* Middle Section - Music Player */}

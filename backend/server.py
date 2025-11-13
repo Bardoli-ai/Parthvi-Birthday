@@ -26,6 +26,16 @@ app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 
+# ============================================
+# AUDIO CONFIGURATION - CHANGE MP3 URL HERE
+# ============================================
+AUDIO_CONFIG = {
+    "audio_url": "https://customer-assets.emergentagent.com/job_songcraft-for-you/artifacts/8rton931_We%E2%80%99ve%20seen%20each%20other%20break%2C%20we%E2%80%99ve%20seen%20%20%282%29.mp3",
+    "song_title": "A Song Just For You",
+    "gifted_by": "Jainish Chaudhari and Dhruv Patel"
+}
+# ============================================
+
 # Define Models
 class StatusCheck(BaseModel):
     model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field

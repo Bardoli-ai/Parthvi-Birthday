@@ -149,6 +149,17 @@ Stay you — the world feels right.`;
     setTimeout(() => setHeartClicked(false), 2000);
   };
 
+  if (loading) {
+    return (
+      <div className="music-landing">
+        <div className="loading-container">
+          <div className="loader"></div>
+          <p className="loading-text">Loading your gift...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="music-landing">
       <audio ref={audioRef} src={audioUrl} preload="metadata" />

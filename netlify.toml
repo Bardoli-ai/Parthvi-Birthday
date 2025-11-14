@@ -1,0 +1,18 @@
+[build]
+  # Tell Netlify to build from the frontend folder
+  base = "frontend/"
+  command = "yarn build"
+  publish = "build/"
+
+# React Router support - redirect all routes to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# API proxy - redirect API calls to backend
+[[redirects]]
+  from = "/api/*"
+  to = "https://your-backend-url.com/api/:splat"
+  status = 200
+  force = true

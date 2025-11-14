@@ -3,6 +3,16 @@ import { Play, Pause, Heart, Music2, Volume2, Gift, Sparkles } from 'lucide-reac
 import { Button } from './ui/button';
 import './MusicLanding.css';
 
+// ============================================
+// CONFIGURATION - CHANGE MP3 URL HERE
+// ============================================
+const AUDIO_CONFIG = {
+  audioUrl: 'https://customer-assets.emergentagent.com/job_songcraft-for-you/artifacts/8rton931_We%E2%80%99ve%20seen%20each%20other%20break%2C%20we%E2%80%99ve%20seen%20%20%282%29.mp3',
+  songTitle: 'A Song Just For You',
+  giftedBy: 'Jainish Chaudhari and Dhruv Patel'
+};
+// ============================================
+
 const MusicLanding = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -11,14 +21,7 @@ const MusicLanding = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [heartClicked, setHeartClicked] = useState(false);
   const [showGift, setShowGift] = useState(true);
-  const [audioUrl, setAudioUrl] = useState('');
-  const [songTitle, setSongTitle] = useState('A Song Just For You');
-  const [giftedBy, setGiftedBy] = useState('Jainish Chaudhari and Dhruv Patel');
-  const [loading, setLoading] = useState(true);
   const audioRef = useRef(null);
-
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-  const API = `${BACKEND_URL}/api`;
 
   const lyrics = `[Verse 1]
 We've seen each other break, we've seen each other bloom,

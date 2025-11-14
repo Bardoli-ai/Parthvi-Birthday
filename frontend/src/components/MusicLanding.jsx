@@ -185,8 +185,8 @@ Stay you — the world feels right.`;
               </div>
             </div>
           </div>
-          <h1 className="song-title">{songTitle}</h1>
-          <p className="song-subtitle">Gifted By: {giftedBy}</p>
+          <h1 className="song-title">{AUDIO_CONFIG.songTitle}</h1>
+          <p className="song-subtitle">Gifted By: {AUDIO_CONFIG.giftedBy}</p>
         </div>
 
         {/* Middle Section - Music Player */}

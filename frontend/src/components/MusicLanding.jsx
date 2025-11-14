@@ -65,24 +65,6 @@ The one who makes time stop and bend.
 Happy birthday Parthvi, our beautiful light,
 Stay you — the world feels right.`;
 
-  // Fetch audio configuration from backend
-  useEffect(() => {
-    const fetchAudioConfig = async () => {
-      try {
-        const response = await fetch(`${API}/audio-config`);
-        const data = await response.json();
-        setAudioUrl(data.audio_url);
-        setSongTitle(data.song_title);
-        setGiftedBy(data.gifted_by);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching audio config:', error);
-        setLoading(false);
-      }
-    };
-    fetchAudioConfig();
-  }, [API]);
-
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -108,7 +90,7 @@ Stay you — the world feels right.`;
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('ended', handleEnded);
     };
-  }, [audioUrl]);
+  }, []);
 
   useEffect(() => {
     if (isPlaying) {

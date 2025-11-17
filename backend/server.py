@@ -30,7 +30,7 @@ api_router = APIRouter(prefix="/api")
 # AUDIO CONFIGURATION - CHANGE MP3 URL HERE
 # ============================================
 AUDIO_CONFIG = {
-    "audio_url": "https://github.com/Bardoli-ai/Parthvi-Birthday/raw/refs/heads/main/frontend/public/You%20saw%20the%20storm%20before%20I%20knew%20the%20rain%20(1).mp3",
+    "audio_url": "https://github.com/Bardoli-ai/Parthvi-Birthday/raw/refs/heads/main/frontend/public/We%E2%80%99ve%20seen%20each%20other%20break,%20we%E2%80%99ve%20seen%20%20(2).mp3",
     "song_title": "A Song Just For You",
     "gifted_by": "Jainish Chaudhari and Dhruv Patel"
 }

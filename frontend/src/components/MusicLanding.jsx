@@ -7,7 +7,7 @@ import './MusicLanding.css';
 // CONFIGURATION - CHANGE MP3 URL HERE
 // ============================================
 const AUDIO_CONFIG = {
-  audioUrl: 'https://github.com/Bardoli-ai/Parthvi-Birthday/raw/refs/heads/main/frontend/public/You%20saw%20the%20storm%20before%20I%20knew%20the%20rain%20(1).mp3',
+  audioUrl: 'https://github.com/Bardoli-ai/Parthvi-Birthday/raw/refs/heads/main/frontend/public/We%E2%80%99ve%20seen%20each%20other%20break,%20we%E2%80%99ve%20seen%20%20(2).mp3',
   songTitle: 'A Song Just For You',
   giftedBy: 'Jainish and Dhruv'
 };

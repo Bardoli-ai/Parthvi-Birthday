@@ -7,9 +7,9 @@ import './MusicLanding.css';
 // CONFIGURATION - CHANGE MP3 URL HERE
 // ============================================
 const AUDIO_CONFIG = {
-  audioUrl: 'https://customer-assets.emergentagent.com/job_songcraft-for-you/artifacts/8rton931_We%E2%80%99ve%20seen%20each%20other%20break%2C%20we%E2%80%99ve%20seen%20%20%282%29.mp3',
+  audioUrl: 'https://drive.google.com/file/d/1HhA6HjcIspq8u5ZOabxvztigYiKEeKWr/view?usp=sharing',
   songTitle: 'A Song Just For You',
-  giftedBy: 'Jainish Chaudhari and Dhruv Patel'
+  giftedBy: 'Jainish and Dhruv'
 };
 // ============================================
 
